@@ -1,4 +1,4 @@
-const TermsAndConditions = require('../models/terms.model');
+const TermsAndConditions = require('../models/terms_condition.model');
 
 // 🆕 Create or Update (singleton)
 exports.upsertTerms = async (req, res) => {

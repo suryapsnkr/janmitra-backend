@@ -29,8 +29,6 @@ app.use('/api/units', require('./routes/unit_master.routes'));
 app.use('/api/warehouses', require('./routes/warehouse.routes'));
 app.use('/api/multiprices', require('./routes/multiprice.routes'));
 
-app.use('/api/static', require('./routes/static.routes'));
-
 app.use('/api/galleries', require('./routes/gallery.routes'));
 app.use('/api/blogs', require('./routes/blog.routes'));
 app.use('/api/firms', require('./routes/firm.routes'));

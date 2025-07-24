@@ -2,7 +2,7 @@ const router = require('express').Router();
 const {
   getTerms,
   upsertTerms
-} = require('../controllers/terms.controller');
+} = require('../controllers/terms_condition.controller');
 
 const { verifyToken, adminOnly } = require('../middleware/auth');
 
