@@ -13,6 +13,7 @@ exports.createMember = async (req, res) => {
 exports.getMembers = async (req, res) => {
   try {
     const members = await Member.find()
+      .populate('userId', 'name mobile email')
       .populate('qualificationId', 'name')
       .populate('relationId', 'name')
       .populate('pincodeId', 'pincode city state');
