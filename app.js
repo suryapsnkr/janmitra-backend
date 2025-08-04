@@ -1,9 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:3000', // allow your frontend URL
+  credentials: true,              // if you use cookies or auth headers
+}));
+
 app.use(express.json());
 
 // Routes

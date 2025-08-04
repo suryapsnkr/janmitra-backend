@@ -15,7 +15,7 @@ exports.createPermission = async (req, res) => {
 exports.getPermissions = async (req, res) => {
   try {
     const permissions = await ModulePermission.find()
-      .populate('moduleId', 'moduleName')
+      .populate('modules.moduleId', 'moduleName')
       .populate('roleId', 'name');
     res.json(permissions);
   } catch (err) {
@@ -27,7 +27,7 @@ exports.getPermissions = async (req, res) => {
 exports.getPermissionById = async (req, res) => {
   try {
     const permission = await ModulePermission.findById(req.params.id)
-      .populate('moduleId', 'moduleName')
+      .populate('modules.moduleId', 'moduleName')
       .populate('roleId', 'name');
     if (!permission) return res.status(404).json({ message: 'Permission not found' });
     res.json(permission);
