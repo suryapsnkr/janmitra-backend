@@ -8,6 +8,7 @@ const orderSchema = new mongoose.Schema({
       quantity: { type: Number, default: 1 }
     }
   ],
+  firmId: { type: mongoose.Schema.Types.ObjectId, ref: 'Firm', required: true },
   totalAmount: { type: Number, required: true },
   status: { type: String, enum: ['Pending', 'Completed', 'Cancelled'], default: 'Pending' },
   paymentStatus: { type: String, enum: ['Unpaid', 'Paid'], default: 'Unpaid' },

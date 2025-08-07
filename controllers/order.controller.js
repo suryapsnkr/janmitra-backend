@@ -16,7 +16,8 @@ exports.getOrders = async (req, res) => {
   try {
     const orders = await Order.find()
       .populate('memberId', 'name')
-      .populate('products.productId', 'name price');
+      .populate('products.productId', 'name price')
+      .populate('firmId', 'firmName');
     res.json(orders);
   } catch (err) {
     res.status(500).json({ error: err.message });
